@@ -11,14 +11,14 @@ class GetData extends Component {
   }
 
   listResources() {
-    let {userToken, orgToken} = this.props;
+    let {userToken, orgToken, elementToken} = this.props;
     let baseUrl = 'https://api.cloud-elements.com/elements/api-v2';
     let path= 'MyContact';
     // The b
     let config = {
       method: 'GET',
       headers: {
-        'Authorization': `User ${userToken}, Organization ${orgToken}, Element RP5PS0slJltwMTb/jR8WI99+o8CLQ8v/9w4m+94kFO4=`,
+        'Authorization': `User ${userToken}, Organization ${orgToken}, Element ${elementToken}`,
         'Content-Type': 'application/json'
       }
     }
@@ -40,13 +40,22 @@ class GetData extends Component {
     ];
     return(
       <div>
-      <div>
-          <div> Retrieve data</div>
-          <button className="btn btn-warning" onClick={this.listResources}> Pull Data </button>
-        </div>
-        { resources ?
-        <ReactTable className='table' data={data} columns={columns} />
-        :
+        <div>
+            <div className="row">
+              <div className="col-sm-6 col-md-3">
+                <div className="thumbnail">
+                  <div className="caption">
+                    <h4>Retrieve Contacts</h4>
+                    <p>Once you have added the Salesforce Integration, you can pull your contacts.</p>
+                    <button className="btn btn-warning" onClick={this.listResources}> Pull Contacts </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          { resources ?
+          <ReactTable className='table' data={data} columns={columns} />
+          :
         <div> </div>
         }
       </div>

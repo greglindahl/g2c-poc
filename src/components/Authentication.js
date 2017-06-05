@@ -10,9 +10,8 @@ class Authentication extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // The callback url should point to the endpoint in your system that received the OAuth Grant Code
-      // In this case its
-      vendorCallbackUrl: process.env.NGROK
+      // Input your redirectUrl or ngrok below
+      vendorCallbackUrl: '${INSERT_CALLBACK_URL}'
     }
   }
 
@@ -61,12 +60,17 @@ class Authentication extends Component {
         "configuration": {
           "oauth.callback.url": `${vendorCallbackUrl}`,
           "oauth.api.key": `${vendorApiKey}`,
-          "oauth.api.secret": `${vendorSecret}`
+          "oauth.api.secret": `${vendorSecret}`,
+          "event.notification.enabled": true,
+          "event.poller.refresh_interval": "1",
+          "event.vendor.type": "polling",
+          "event.notification.callback.url": "${INSERT_EVENTS_CALLBACK_URL}",
+          "event.objects": "Contact"
         },
         "tags": [
           "demo app"
         ],
-        "name": "Demo App Instance"
+        "name": "Acme App Test"
       })
     }
     // Excecute the REST Call
@@ -95,12 +99,19 @@ class Authentication extends Component {
     let { redirectUrl } = this.state;
     let { elementToken } = this.props;
     return(
-      <div>
-        <button className="btn btn-primary" onClick={function() {
-          window.location = redirectUrl
-        }}>
-        Add salesforce integration
-        </button>
+      <div className="row">
+        <div className="col-sm-6 col-md-3">
+          <div className="thumbnail">
+            <div className="caption">
+              <h3>Salesforce</h3>
+              <button className="btn btn-primary" onClick={function() {
+                window.location = redirectUrl
+              }}>
+              Add Integration
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
