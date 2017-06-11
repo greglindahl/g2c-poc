@@ -1,3 +1,11 @@
+/**
+* Dashboard.js
+* Renders the different components, (Authentication, GetData, PostData)
+* that will execute the different API calls to render your data
+* Please set your Cloud Elements User and Org tokens, as well as, your Salesforce
+* connected app configurations (api key and secret)
+*/
+
 import React from 'react';
 import Authentication from './Authentication';
 import PostData from './PostData';

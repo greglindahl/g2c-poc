@@ -1,3 +1,8 @@
+/**
+* App.js
+* Renders the Nav and Dashboard components of the app
+*/
+
 import React, { Component } from 'react';
 import Nav from './components/Nav';
 import Dashboard from './components/Dashboard';

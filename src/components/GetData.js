@@ -1,3 +1,9 @@
+/**
+* GetData.js
+* Renders the GetData component which makes the GET /MyContact API call
+* This call makes a request to Salesforce pulling current contacts in the system
+*/
+
 import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css'

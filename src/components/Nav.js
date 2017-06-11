@@ -1,3 +1,9 @@
+/**
+* Authentication.js
+* Renders the authentication component
+* This is just for show - does not link out to different pages
+*/
+
 import React from 'react';
 
 const Nav = () => {

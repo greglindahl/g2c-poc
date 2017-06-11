@@ -1,11 +1,35 @@
+# Cloud Elements React Sample App
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+## Purpose
+
+The sample app includes examples of how to embed Cloud Elements into your application.
+This app also utilizes a defined common resource (`MyContact`) with a transformation applied
+to three Elements:
+
+* Salesforce
+* Shopify
+* Magento 2.0 REST version
+
+A formula (workflow) is used to automate the sync of contact data from `Salesforce` to `Shopify` and `Magento`.
+
+Directions on how to build a [common resource, map data](https://developers.cloud-elements.com/docs/guides/common-resources/?resource=organizations), and implement the [formula](https://developers.cloud-elements.com/docs/quickstart/formulaTemplate.html) used in this app are available on our [developer portal](https://developers.cloud-elements.com)
+
+Example Code Snippets:
+
+* Cloud Elements `Authentication`
+* `OAuth 2` with Salesforce
+* `GET /mycontact`
+* `POST /mycontact`
+
+The code samples used in this application are also referenced in our [example app](https://github.com/cloud-elements/exampleapp).
+If have not gone through the exercises in the example app, we would recommend starting with them.  They also provide a solid overview on how to implement Cloud Elements `authentication` and executing an `API call`.
 
 ## Table of Contents
 
-- [Updating to New Releases](#updating-to-new-releases)
+- [Requirements](#requirements)
+- [Installation](#installation)
 - [Sending Feedback](#sending-feedback)
 - [Folder Structure](#folder-structure)
 - [Available Scripts](#available-scripts)
@@ -83,26 +107,26 @@ You can find the most recent version of this guide [here](https://github.com/fac
   - [`npm run build` fails on Heroku](#npm-run-build-fails-on-heroku)
 - [Something Missing?](#something-missing)
 
-## Updating to New Releases
+## Requirements
 
-Create React App is divided into two packages:
+* [React](https://facebook.github.io/react/)
+* [NodeJS](https://nodejs.org/en/)
+* [Bootstrap](http://getbootstrap.com/)
+* [ngrok](https://ngrok.com/)
 
-* `create-react-app` is a global command-line utility that you use to create new projects.
-* `react-scripts` is a development dependency in the generated projects (including this one).
+Please, feel free to make any contributions you feel will make Cloud Elements React Sample app better.
 
-You almost never need to update `create-react-app` itself: it delegates all the setup to `react-scripts`.
+## Installation
 
-When you run `create-react-app`, it always creates the project with the latest version of `react-scripts` so you’ll get all the new features and improvements in newly created apps automatically.
-
-To update an existing project to a new version of `react-scripts`, [open the changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md), find the version you’re currently on (check `package.json` in this folder if you’re not sure), and apply the migration instructions for the newer versions.
-
-In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
-
-We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly.
+```
+$ git clone https://github.com/greglindahl/my-app
+$ cd my-app
+$ npm install
+```
 
 ## Sending Feedback
 
-We are always open to [your feedback](https://github.com/facebookincubator/create-react-app/issues).
+We are always open to [your feedback](https://github.com/greglindahl/my-app/issues)
 
 ## Folder Structure
 
@@ -115,6 +139,7 @@ my-app/
   package.json
   public/
     index.html
+    dashboard.css
     favicon.ico
   src/
     App.css
@@ -123,7 +148,15 @@ my-app/
     index.css
     index.js
     logo.svg
+    components/
+      Authentication.js
+      Dashboard.js
+      GetData.js
+      Nav.js
+      PostData.js
 ```
+
+## Project Features that are included in the create-react-app repo
 
 For the project to build, **these files must exist with exact filenames**:
 
@@ -1516,17 +1549,17 @@ When you build the project, Create React App will place the `public` folder cont
 2. Install `serve` by running `npm install --save serve`.
 
 3. Add this line to `scripts` in `package.json`:
-    
+
     ```
     "now-start": "serve build/",
     ```
-    
+
 4. Run `now` from your project directory. You will see a **now.sh** URL in your output like this:
-    
+
     ```
     > Ready! https://your-project-dirname-tpspyhtdtk.now.sh (copied to clipboard)
     ```
-    
+
     Paste that URL into your browser when the build is complete, and you will see your deployed app.
 
 Details are available in [this article.](https://zeit.co/blog/now-static)

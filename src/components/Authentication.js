@@ -1,3 +1,8 @@
+/**
+* Authentication.js
+* Renders the authentication component which makes the OAuth 2 call to Salesforce
+*/
+
 import React, { Component } from 'react';
 import queryString from 'query-string';
 
