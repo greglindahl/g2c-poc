@@ -107,13 +107,20 @@ class Authentication extends Component {
       <div className="row">
         <div className="col-sm-6 col-md-3">
           <div className="thumbnail">
+          <i className="fa fa-cog icon-right"></i>
             <div className="caption">
               <h3>Salesforce</h3>
-              <button className="btn btn-primary" onClick={function() {
+              <button className="btn btn-primary" 
+                onClick={function() {
                 window.location = redirectUrl
               }}>
-              Add Integration
+              Connect
               </button>
+              <div className="row align-items-end">
+                <div className="col status">
+                  <input id="checkBox" type="checkbox" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

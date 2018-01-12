@@ -44,7 +44,7 @@ class Dashboard extends React.Component {
             <a className="nav-link active" href="#">Dashboard <span className="sr-only">(current)</span></a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Contacts</a>
+            <a className="nav-link" href="#">Invoices</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">Analytics</a>
@@ -56,7 +56,7 @@ class Dashboard extends React.Component {
       </nav>
 
     <main className="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3 float-main" role="main">
-      <h1>Contacts</h1>
+      <h1>Invoices</h1>
       <section className="row text-center placeholders marginBtn">
         <Authentication orgToken={orgToken} userToken={userToken} vendorApiKey={vendorApiKey} vendorSecret={vendorSecret} setElementToken={ token => this.setElementToken(token)}/>
       </section>

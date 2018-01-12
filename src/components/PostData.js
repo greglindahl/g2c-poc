@@ -57,7 +57,7 @@ class PostData extends Component {
     let data = resources ? resources : {};
     return(
       <form onSubmit={this.postResource}>
-        <p className="help-block marginBtn">Add a New Contact</p>
+        <p className="help-block marginBtn">Add a new Invoice</p>
         <div className="form-group">
           <div className="col-md-4">
             <input className="form-control" value={this.state.FirstName} name="FirstName" onChange={this.handleChange} type="text" placeholder="First Name" />
@@ -69,7 +69,7 @@ class PostData extends Component {
             <input className="form-control" value={this.state.email} name="email" onChange={this.handleChange} type="text" placeholder="Email" />
           </div>
         </div>
-        <input type="submit" value="Add Contact" className="btn btn-primary marginBtn" />
+        <input type="submit" value="Add Invoice" className="btn btn-primary marginBtn" />
       </form>
     )
   }

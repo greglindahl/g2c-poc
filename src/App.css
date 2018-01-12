@@ -30,3 +30,12 @@ td {
 .row-padding {
   padding: 20px;
 }
+
+.icon-right {
+  float: right;
+}
+
+.status {
+  float: right;
+  padding-right: 10px;
+}

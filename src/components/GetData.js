@@ -51,9 +51,9 @@ class GetData extends Component {
               <div className="col-sm-6 col-md-3">
                 <div className="thumbnail">
                   <div className="caption">
-                    <h4>Retrieve Contacts</h4>
-                    <p>Once you have added the Salesforce Integration, you can pull your contacts.</p>
-                    <button className="btn btn-warning" onClick={this.listResources}> Pull Contacts </button>
+                    <h4>Retrieve Invoices</h4>
+                    <p>Once you have added the Salesforce Integration, you can pull your invoices.</p>
+                    <button className="btn btn-warning" onClick={this.listResources}> Pull Invoices </button>
                   </div>
                 </div>
               </div>
